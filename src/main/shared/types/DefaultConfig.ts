@@ -24,7 +24,7 @@ export const DEFAULT_EXTRA_CONFIG: ExtraConfig = {
   apkVer: '2025.03.19.1126',
   carName: 'LIVI',
   oemName: 'App',
-  nightMode: true,
+  nightMode: 'dark',
   hand: HandDriveType.LHD,
   mediaDelay: 1000,
   mediaSound: 1,
