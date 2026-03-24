@@ -35,7 +35,7 @@ export type DongleConfig = {
   naviSafeAreaDrawOutside: boolean
   lastPhoneWorkMode: PhoneWorkMode
   apkVer: string
-  nightMode: boolean
+  nightMode: string
   carName: string
   oemName: string
   hand: HandDriveType

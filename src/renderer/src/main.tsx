@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { ThemeProvider, CssBaseline } from '@mui/material'
+import { ThemeProvider, CssBaseline, useMediaQuery } from '@mui/material'
 import { useLiviStore } from './store/store'
 import {
   darkTheme,
@@ -39,12 +39,18 @@ const Root = () => {
     }))
   }, [])
 
+  type NightMode = 'light' | 'dark' | 'auto'
+  const darkLightLookup: Record<NightMode, boolean> = {
+    light: false,
+    dark: true,
+    auto: useMediaQuery('(prefers-color-scheme: dark)')
+  }
   const mode: THEME.DARK | THEME.LIGHT =
-    typeof settings?.nightMode === 'boolean'
-      ? settings.nightMode
+    typeof settings?.nightMode === 'undefined'
+      ? THEME.DARK
+      : darkLightLookup[settings?.nightMode as NightMode]
         ? THEME.DARK
         : THEME.LIGHT
-      : THEME.DARK
 
   const primaryOverride =
     mode === THEME.DARK ? settings?.primaryColorDark : settings?.primaryColorLight

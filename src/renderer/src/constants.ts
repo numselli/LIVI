@@ -27,7 +27,8 @@ export const FOCUSABLE_SELECTOR = [
 
 export enum THEME {
   LIGHT = 'light',
-  DARK = 'dark'
+  DARK = 'dark',
+  AUTO = 'auto'
 }
 
 export const EMPTY_STRING = '—'

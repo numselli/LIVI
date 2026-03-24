@@ -10,10 +10,24 @@ export const appearanceSchema: SettingsNode<ExtraConfig> = {
   path: '',
   children: [
     {
-      type: 'checkbox',
+      type: 'select',
       label: 'Darkmode',
       labelKey: 'settings.nightMode',
-      path: 'nightMode'
+      path: 'nightMode',
+      options: [
+        {
+          label: 'Enabled',
+          value: 'dark'
+        },
+        {
+          label: 'Disabled',
+          value: 'light'
+        },
+        {
+          label: 'System',
+          value: 'auto'
+        }
+      ]
     },
     {
       type: 'color',
